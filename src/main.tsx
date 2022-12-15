@@ -7,9 +7,12 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 /* main css */
 import './main.css'
 import { CalendarApp } from './CalendarApp';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+    <BrowserRouter>
     <CalendarApp/>
+    </BrowserRouter>
   </React.StrictMode>,
 )
