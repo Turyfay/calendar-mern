@@ -4,18 +4,26 @@ import 'react-big-calendar/lib/css/react-big-calendar.css'
 import { addHours } from 'date-fns';
 
 //Components
-import { NavBar } from "../components/NavBar";
+import { NavBar, CalendarEvent } from "../";
 import { localizer, getMessagesES } from '../../helpers';
 
-
 const events = [{
-  title: 'Title',
+  title: 'Cumpleaños del Jefe',
   notes: 'Ejemplo de notas',
   start: new Date(),
-  end: addHours(new Date(), 2)
+  end: addHours(new Date(), 2),
+  user: {
+    id: 'kkdmleck4r533cd',
+    name: 'David Enamorado'
+  }
 }]
 
+
 export const CalendarPage = () => {
+  /* const eventStyleGetter = (event: any, start: any, end: any, isSelected: any) =>{
+    console.log({event,  start, end, isSelected});
+  } */
+  
   return (
    <>
     <NavBar/>
@@ -27,6 +35,9 @@ export const CalendarPage = () => {
     endAccessor="end" 
     style={{height: 500}}
     messages={getMessagesES()}
+    components={{
+      event: CalendarEvent
+    }}
     />
    </>
   )
