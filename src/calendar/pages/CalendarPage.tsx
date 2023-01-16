@@ -1,9 +1,10 @@
-import { Calendar, Views } from "react-big-calendar";
+import { Calendar} from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+
 //Components
-import { NavBar, CalendarEvent, CalendarModal } from "../";
+import { NavBar, CalendarEvent, CalendarModal, FabAddNew } from "../";
 import { localizer, getMessagesES } from "../../helpers";
-import { useCalendar, useUiStore } from "../../hooks";
+import { useCalendar } from "../../hooks";
 
 export const CalendarPage = () => {
   const { events, lastView, onDoubleClick, onSelect, onViewChanged } = useCalendar();
@@ -29,6 +30,7 @@ export const CalendarPage = () => {
         onView={onViewChanged}
       />
       <CalendarModal />
+      <FabAddNew />
     </>
   );
 };
