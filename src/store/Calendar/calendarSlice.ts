@@ -4,6 +4,7 @@ export const calendarSlice = createSlice({
     name: 'calendar',
     initialState: {
         events: [{
+            _id: new Date().getTime(),
             title: 'Cumpleaños del jefe',
             note: 'Hay que comprar el pastel',
             start: new Date(),
@@ -16,17 +17,10 @@ export const calendarSlice = createSlice({
         activeEvent: null,
     },
     reducers: {
-        newEvent: (state: any) => {
-            state.activeEvent.title;
+        onSetActiveEvent: (state , {payload}) => {
+            state.activeEvent = payload;
         },
-        addEvent: (state: any) => {
-            state.activeEvent.title;
-        },
-        removeEvent: (state: any) => {
-            state.activeEvent.title;
-        },
-
     }
 });
 
-export const { newEvent, addEvent, removeEvent } = calendarSlice.actions;
+export const { onSetActiveEvent } = calendarSlice.actions;
